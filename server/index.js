@@ -30,7 +30,9 @@ app.use(
 app.use(body_parser.json());
 app.use(cookie_parser());
 app.get("/", (req, res, next) => {
-  res.send("hello world");
+  res.json({
+    message  : "hello world"
+  });
 });
 app.get("/api/users/auth", auth, async function (req, res) {
   res.status(200).json({
