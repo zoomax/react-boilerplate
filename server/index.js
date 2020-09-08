@@ -6,8 +6,6 @@ const cookie_parser = require("cookie-parser");
 const dotenv = require("dotenv");
 dotenv.config();
 const { UserModel } = require("./models/user");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
 const { auth } = require("./utils/auth");
 const  port  = process.env.port || 3000  ; 
 mongoose
@@ -22,6 +20,7 @@ mongoose
   })
   .catch((error) => console.error(error));
 
+  app.use(express.static("public"))
 app.use(
   body_parser.urlencoded({
     extended: true,
