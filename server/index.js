@@ -7,7 +7,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const { UserModel } = require("./models/user");
 const { auth } = require("./utils/auth");
-const  port  = process.env.port || 3000  ; 
+const  port  = process.env.PORT || 3000  ; 
 mongoose
   .connect(process.env.MONGOOSE_URI, {
     useNewUrlParser: true,
