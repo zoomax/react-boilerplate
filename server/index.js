@@ -9,6 +9,7 @@ const { UserModel } = require("./models/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { auth } = require("./utils/auth");
+const  port  = process.env.port || 3000  ; 
 mongoose
   .connect(process.env.MONGOOSE_URI, {
     useNewUrlParser: true,
@@ -133,7 +134,7 @@ app.get("/api/users/logout", auth , async function (req, res) {
     })
   }
 });
-app.listen(process.env.PORT, () => {
-  console.log("app is listening on port 3000!");
+app.listen(port, () => {
+  console.log(`App is listening on port ${port} !`);
 });
 
